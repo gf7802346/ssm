@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--配置别名-->
+    <typeAliases>
+        <package name="com.itheima.pojo"/>
+    </typeAliases>
+
+    <!--配置数据库环境-->
+    <environments default="ssm">
+        <environment id="ssm">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql:///ssm"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--配置映射器扫描-->
+    <mappers>
+        <package name="com.itheima.dao"/>
+    </mappers>
+</configuration>
